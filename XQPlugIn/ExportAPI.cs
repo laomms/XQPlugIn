@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.Web.UI.WebControls.Expressions;
 
 namespace XQPlugIn
 {
@@ -62,25 +63,7 @@ namespace XQPlugIn
                     string dllpath = System.Environment.CurrentDirectory + "\\bin\\xqapi.dll";
                     API.SetDllDirectory(dllpath);
                     string onlineList = API.Api_GetOnLineList();
-                    //if (onlineList.Contains("\r\n"))
-                    //{
-                    //    foreach (var plugin in plugins_events[1003])
-                    //    {
-                    //        if (!plugins[plugin.plugin_id].enabled)
-                    //        {
-                    //            continue;
-                    //        }
-                    //        var enable = IntMethod(plugin.@event);
-                    //        if (enable)
-                    //        {
-                    //            fakeMainThread.push((int UnnamedParameter) =>
-                    //            {
-                    //                enable();
-                    //            }).wait();
-                    //        }
-                    //    }
-                    //    EnabledEventCalled = true;
-                    //}
+                   
                 }
 
                 else if (eventType == (int)subType.XQ_Disable)
@@ -154,8 +137,8 @@ namespace XQPlugIn
                 }
                 else if (eventType == (int)subType.XQ_FriendMsgEvent)
                 {
-                    string szMsg = sourceId + "发送了这样的消息:" + msg;
-                    XQMain.sendPrivateMsg(botQQ, eventType, sourceId, szMsg);
+                    string szMsg = activeQQ + "发送了这样的消息:" + msg;
+                    XQMain.sendPrivateMsg(botQQ, eventType, activeQQ, szMsg);
 
                 }
                 else if (eventType == (int)subType.XQ_GroupTmpMsgEvent)
@@ -164,7 +147,9 @@ namespace XQPlugIn
                 }
                 else if (eventType == (int)subType.XQ_GroupMsgEvent)
                 {
-
+                    string szMsg = activeQQ + "发送了这样的消息:" + msg;
+                    if (activeQQ != botQQ) 
+                        XQMain.sendGroupMsg(botQQ, eventType, sourceId, activeQQ, szMsg);
                 }
                 else if (eventType == (int)subType.XQ_DiscussTmpMsgEvent)
                 {
@@ -187,7 +172,7 @@ namespace XQPlugIn
         [DllExport(CallingConvention = System.Runtime.InteropServices.CallingConvention.StdCall)]
         public static string XQ_Create(string frameworkVersion)
         {
-            return "{\"name\":\"XQPlugIn\", \"pver\":\"1.0.8\", \"sver\":1, \"author\":\"XXX\", \"desc\":\"A simple plugin for XQ\"}";
+            return "{\"name\":\"XQPlugIn\", \"pver\":\"1.0\", \"sver\":1, \"author\":\"XXX\", \"desc\":\"A simple plugin for XQ\"}";
         }
         [DllExport(CallingConvention = System.Runtime.InteropServices.CallingConvention.StdCall)]
         public static int XQ_DestroyPlugin()

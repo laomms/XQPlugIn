@@ -15,73 +15,92 @@ namespace XQPlugIn
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         public static extern bool SetDllDirectory(string lpPathName);
 
-        [DllImport("kernel32", SetLastError = true, CharSet = CharSet.Ansi)]
-        public static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] IntPtr lpFileName);
+
 
         [DllImport(DllName)]
-        public static extern int Api_SendMsg(IntPtr botQQ, int msgType, IntPtr groupId, IntPtr QQ, IntPtr content, int bubbleId);
+        public static extern int Api_SendMsg([MarshalAs(UnmanagedType.LPStr)]  string botQQ, int msgType, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ, [MarshalAs(UnmanagedType.LPStr)]  string content, int bubbleId);
         [DllImport(DllName)]
-        public static extern IntPtr Api_OutPutLog(IntPtr content);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_OutPutLog([MarshalAs(UnmanagedType.LPStr)]  string content);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetNick(IntPtr botQQ, IntPtr QQ);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_GetNick([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string QQ);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetGroupAdmin(IntPtr botQQ, IntPtr groupId);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_GetGroupAdmin([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetGroupCard(IntPtr botQQ, IntPtr groupId, IntPtr QQ);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_GetGroupCard([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetGroupList(IntPtr botQQ);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_GetGroupList([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetGroupList_B(IntPtr botQQ);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_GetGroupList_B([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetGroupName(IntPtr botQQ, IntPtr groupId);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_GetGroupName([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetFriendList(IntPtr botQQ);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_GetFriendList([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetFriendList_B(IntPtr botQQ);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_GetFriendList_B([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetFriendsRemark(IntPtr botQQ, IntPtr QQ);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_GetFriendsRemark([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string QQ);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetGroupMemberList(IntPtr botQQ, IntPtr groupId);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_GetGroupMemberList([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetGroupMemberList_B(IntPtr botQQ, IntPtr groupId);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_GetGroupMemberList_B([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetGroupMemberList_C(IntPtr botQQ, IntPtr groupId);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_GetGroupMemberList_C([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_HandleGroupEvent(IntPtr botQQ, int reqType, IntPtr QQ, IntPtr groupId, IntPtr seq, int rspType, IntPtr msg);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_HandleGroupEvent([MarshalAs(UnmanagedType.LPStr)]  string botQQ, int reqType, [MarshalAs(UnmanagedType.LPStr)]  string QQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string seq, int rspType, [MarshalAs(UnmanagedType.LPStr)]  string msg);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_HandleFriendEvent(IntPtr botQQ, IntPtr QQ, int rspType, IntPtr msg);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_HandleFriendEvent([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string QQ, int rspType, [MarshalAs(UnmanagedType.LPStr)]  string msg);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_QuitGroup(IntPtr botQQ, IntPtr groupId);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_QuitGroup([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetGroupMemberNum(IntPtr botQQ, IntPtr groupId);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_GetGroupMemberNum([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
         [DllImport(DllName)]
-        public static extern Boolean Api_SetAnon(IntPtr botQQ, IntPtr groupId, Boolean enable);
+        public static extern Boolean Api_SetAnon([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, Boolean enable);
         [DllImport(DllName)]
-        public static extern IntPtr Api_ShutUP(IntPtr botQQ, IntPtr groupId, IntPtr QQ, int duration);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_ShutUP([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ, int duration);
         [DllImport(DllName)]
-        public static extern Boolean Api_SetGroupCard(IntPtr botQQ, IntPtr groupId, IntPtr QQ, IntPtr card);
+        public static extern Boolean Api_SetGroupCard([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ, [MarshalAs(UnmanagedType.LPStr)]  string card);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_KickGroupMBR(IntPtr botQQ, IntPtr groupId, IntPtr QQ, bool refuseForever);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_KickGroupMBR([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ, bool refuseForever);
         [DllImport(DllName)]
-        public static extern IntPtr Api_UpVote(IntPtr botQQ, IntPtr QQ);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_UpVote([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string QQ);
 
         [DllImport(DllName)]
         public static extern Boolean Api_IsEnable();
@@ -90,30 +109,35 @@ namespace XQPlugIn
         public static extern string Api_GetOnLineList();
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_UpLoadPic(IntPtr botQQ, int uploadType, IntPtr targetId, IntPtr image);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_UpLoadPic([MarshalAs(UnmanagedType.LPStr)]  string botQQ, int uploadType, [MarshalAs(UnmanagedType.LPStr)]  string targetId, [MarshalAs(UnmanagedType.LPStr)]  string image);
 
         [DllImport(DllName)]
-        public static extern Boolean Api_IfFriend(IntPtr botQQ, IntPtr QQ);
+        public static extern Boolean Api_IfFriend([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string QQ);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetCookies(IntPtr botQQ);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_GetCookies([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetBkn(IntPtr botQQ);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_GetBkn([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetVoiLink(IntPtr botQQ, IntPtr GUID);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_GetVoiLink([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string GUID);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_WithdrawMsg(IntPtr botQQ, IntPtr groupId, IntPtr msgNum, IntPtr msgId);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern   string Api_WithdrawMsg([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string msgNum, [MarshalAs(UnmanagedType.LPStr)]  string msgId);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_GetPicLink(IntPtr botQQ, int picType, IntPtr sourceId, IntPtr GUID);
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_GetPicLink([MarshalAs(UnmanagedType.LPStr)]  string botQQ, int picType, [MarshalAs(UnmanagedType.LPStr)]  string sourceId, [MarshalAs(UnmanagedType.LPStr)]  string GUID);
 
         [DllImport(DllName)]
-        public static extern IntPtr Api_SendXML(IntPtr botQQ, int sendType, int msgType, IntPtr groupId, IntPtr QQ, IntPtr objectMsg, int subType);
-
-
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        public static extern  string Api_SendXML([MarshalAs(UnmanagedType.LPStr)]  string botQQ, int sendType, int msgType, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ, [MarshalAs(UnmanagedType.LPStr)]  string objectMsg, int subType);
     }
 }
 #endregion 

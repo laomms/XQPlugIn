@@ -10,16 +10,29 @@ namespace XQPlugIn
 {
     public class XQMain
     {
-        public static string sendPrivateMsg(string botQQ, int msgType, string sendQQ, string msg)
+        public static string sendPrivateMsg( string botQQ, int msgType,  string sendQQ,  string msg)
         {
             try
             {
-                int res= API.Api_SendMsg(Marshal.StringToHGlobalAnsi(botQQ), msgType, IntPtr.Zero, Marshal.StringToHGlobalAnsi(sendQQ), Marshal.StringToHGlobalAnsi(msg), 0);
+                int res= API.Api_SendMsg(botQQ, msgType, null, sendQQ, msg, 0);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }            
+            return "";
+        }
+
+        public static string sendGroupMsg(string botQQ, int msgType, string groupid, string sendqq, string msg)
+        {
+            try
+            {
+                int res = API.Api_SendMsg(botQQ, msgType, groupid, sendqq, msg, 0);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             return "";
         }
     }
