@@ -17,125 +17,125 @@ namespace XQPlugIn
 
 
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention=CallingConvention.StdCall)]
         public static extern int Api_SendMsg([MarshalAs(UnmanagedType.LPStr)]  string botQQ, int msgType, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ, [MarshalAs(UnmanagedType.LPStr)]  string content, int bubbleId);
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_OutPutLog([MarshalAs(UnmanagedType.LPStr)]  string content);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_GetNick([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string QQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_GetGroupAdmin([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_GetGroupCard([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_GetGroupList([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_GetGroupList_B([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_GetGroupName([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_GetFriendList([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_GetFriendList_B([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_GetFriendsRemark([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string QQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_GetGroupMemberList([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_GetGroupMemberList_B([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_GetGroupMemberList_C([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_HandleGroupEvent([MarshalAs(UnmanagedType.LPStr)]  string botQQ, int reqType, [MarshalAs(UnmanagedType.LPStr)]  string QQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string seq, int rspType, [MarshalAs(UnmanagedType.LPStr)]  string msg);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_HandleFriendEvent([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string QQ, int rspType, [MarshalAs(UnmanagedType.LPStr)]  string msg);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_QuitGroup([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_GetGroupMemberNum([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         public static extern Boolean Api_SetAnon([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, Boolean enable);
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_ShutUP([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ, int duration);
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         public static extern Boolean Api_SetGroupCard([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ, [MarshalAs(UnmanagedType.LPStr)]  string card);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_KickGroupMBR([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ, bool refuseForever);
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_UpVote([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string QQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         public static extern Boolean Api_IsEnable();
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         public static extern string Api_GetOnLineList();
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_UpLoadPic([MarshalAs(UnmanagedType.LPStr)]  string botQQ, int uploadType, [MarshalAs(UnmanagedType.LPStr)]  string targetId, [MarshalAs(UnmanagedType.LPStr)]  string image);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         public static extern Boolean Api_IfFriend([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string QQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_GetCookies([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_GetBkn([MarshalAs(UnmanagedType.LPStr)]  string botQQ);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_GetVoiLink([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string GUID);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern   string Api_WithdrawMsg([MarshalAs(UnmanagedType.LPStr)]  string botQQ, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string msgNum, [MarshalAs(UnmanagedType.LPStr)]  string msgId);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_GetPicLink([MarshalAs(UnmanagedType.LPStr)]  string botQQ, int picType, [MarshalAs(UnmanagedType.LPStr)]  string sourceId, [MarshalAs(UnmanagedType.LPStr)]  string GUID);
 
-        [DllImport(DllName)]
+        [DllImport(DllName, CallingConvention = CallingConvention.StdCall)]
         [return: MarshalAs(UnmanagedType.LPStr)]
         public static extern  string Api_SendXML([MarshalAs(UnmanagedType.LPStr)]  string botQQ, int sendType, int msgType, [MarshalAs(UnmanagedType.LPStr)]  string groupId, [MarshalAs(UnmanagedType.LPStr)]  string QQ, [MarshalAs(UnmanagedType.LPStr)]  string objectMsg, int subType);
     }

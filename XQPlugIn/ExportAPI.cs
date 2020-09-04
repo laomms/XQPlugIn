@@ -48,7 +48,7 @@ namespace XQPlugIn
 
         {
             try
-            {
+             {
                 if (eventType == (int)subType.XQ_Load)
                 {
                   
